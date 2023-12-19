@@ -1,0 +1,34 @@
+project:
+  type: website
+
+website:
+  sidebar:
+    style: docked
+    logo: stat_bear.png
+    tools:
+      - icon: github
+        href: https://github.com/berkeley-scf/stat999-quarto
+    contents:
+      - href: index.qmd
+        text: Home / Schedule
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: calendar.qmd
+        text: Calendar
+      - section: "Units"
+        contents:
+          - units/unit1.qmd
+          - units/unit2.ipynb
+          - units/unit3.qmd
+      - href: data.qmd
+        text: Datasets
+          
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
