@@ -1,5 +1,5 @@
 ---
-title: "Statistics 999: Generic Statistics Class"
+title: "Statistics 151a: Linear Modelling: Theory and Applications"
 subtitle: "UC Berkeley, Spring 2024"
 listing:
   - id: schedule
