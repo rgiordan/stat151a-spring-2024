@@ -1,9 +1,9 @@
 - button: Ed
   link: https://ibm.com
-  color: purple
+  color: "#3D1679"
 - button: DataHub
-  link: https://ibm.com
-  color: green
+  link: https://r.datahub.berkeley.edu
+  color: "#EE611A"
 - button: Gradescope
   link: https://ibm.com
-  color: orange
+  color: "#0F7FFF"
