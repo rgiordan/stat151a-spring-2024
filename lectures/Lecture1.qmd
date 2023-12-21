@@ -25,6 +25,16 @@ have the following attributes:
   - A scalar-valued "response" $y_n$
   - A vector-valued "regressor" $\xv_n = (\x_{n1}, \ldots, \x_{nP})$.
 
+::: {.callout-tip title='Notation'}  
+Throughout the course, I will (almost) always use the
+letter "x" for regressors and
+the letter "y" for responses.  There will always be $N$ datapoints, and the
+regressors will be $P$ dimensional.  Vectors and matrices will be boldface.
+
+Of course, I may deviate from this
+(and any) notation convention by saying so explicitly.
+:::
+
 We will be interested in what $\xv_n$ can tell us about $\y_n$. This setup is
 called a "regression problem," and can be attacked with lots of models,
 including non-linear modles.  But we will focus on approaches to this problem
