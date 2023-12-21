@@ -1,5 +1,5 @@
 ---
-title: "Statistics 999: Generic Statistics Class"
+title: "Statistics 151A: Linear Models"
 subtitle: "UC Berkeley, Spring 2024"
 listing:
   - id: schedule
@@ -13,18 +13,40 @@ listing:
 ::: {#buttons}
 :::
 
-We could provide a templated listing of instructors here (or on its own page), similar to [DS100/fa23](https://github.com/DS-100/fa23).
 
-::: {.callout-note title="Welcome to Week 1 of Stat 999"}
+## Instructors
+
+
+::: {.grid}
+
+::: {.g-col-4}
+**Instructor:** Ryan Giordano<br>
+![Ryan Giordano](images/rgiordano.jpg)<br>
+Office: 389 Evans Hall<br>
+Office hours: TBD<br>
+`rgiordano@berkeley.edu`<br>
+pronouns: He / him
 :::
 
-::: {.callout-note title="Welcome to Week 2"}
-Things are picking up now.
+::: {.g-col-8}
+**GSI**: Dohyeong Ki<br>
+![Dohyoeng Ki](images/dohyeongki.jpg)<br>
+Office: --- Evans Hall<br>
+Office hours: TBD<br>
+`dohyeong_ki@berkeley.edu`<br>
+pronouns: He / him
 :::
+
+:::
+
+
+
+
+
 
 ## Schedule
 
-Here we use Quarto's EJS templating.
+This schedule is tentative and subject to change.
 
 ::: {#schedule}
 :::
