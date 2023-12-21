@@ -1,5 +1,5 @@
 ---
-title: "Lecture 1: Why study linear models? Class goals and organization."
+title: "Why study linear models? Class goals and organization."
 format:
   html:
     code-fold: show
@@ -19,6 +19,7 @@ This is a course about linear models.  You probably all know what linear models
 are already --- in short, they are models which fit straight lines through data,
 possibly high-dimensional data.   Every setting we consider in this class will
 have the following attributes:
+
 - A bunch of data points.  We'll index with $n = 1, \ldots, N$.
 - Each datapoint consists of:
   - A scalar-valued "response" $y_n$
@@ -38,6 +39,7 @@ and statistics.  So really, this is only partly a course about linear models
 learning more generally, but viewed within the relatively simple framework of
 linear models.  Some examples (not all of which will be covered, probably)
 include:
+
 - The bias / variance tradeoff
 - The influence function
 - Domain transfer
@@ -129,20 +131,19 @@ majority of the semester:
 
 
 $$
-%:label: lm-scalar
 \begin{align*}
 \y_n ={}& \beta_1 \x_{n1} + \beta_2 \x_{n2} + \ldots + \x_{nP} + \res_{n}, \quad\textrm{For }n=1,\ldots,N.
 \end{align*}
-$$
+$${#eq-lm-scalar}
 
 ::: {.callout-tip title='Notation'}  
 I will always use $N$ for the number of observed data points, and $P$ 
 for the dimension of the regression vector.
 :::
 
-Equation {eq}`lm-scalar` is a general form of simpler cases.  For example,
+@eq-lm-scalar is a general form of simpler cases.  For example,
 if we take $\x_{n1} \equiv 1$, $\x_{n2}= \z_n$ to be some scalar, and $P = 2$, then
-{eq}`lm-scalar` becomes the straight line
+@eq-lm-scalar becomes the straight line
 
 $$
 \begin{align*}
@@ -163,7 +164,7 @@ But in general we only observe $\y_n$ and $\x_{n1}, \ldots, \x_{nP}$, and we
 choose $\beta_1, \ldots, \beta_P$ to make the residuals small.  (How we do
 this precisely will be something we talk about at great length.)
 
-The general form of equation {eq}`lm-scalar` can be written more compactly using
+The general form of @eq-lm-scalar can be written more compactly using
 matrix and vector notation. Specifically, if we let
 
 $$
@@ -206,6 +207,7 @@ $$
 \begin{pmatrix}
   \x_{n1} & \x_{n2} & \ldots & \x_{nP}
 \end{pmatrix}
+\quad\quad\quad
 \begin{pmatrix}
   \beta_{1} \\ \beta_2 \\ \vdots \\ \beta_{P}
 \end{pmatrix}
@@ -296,6 +298,7 @@ $$
 \begin{pmatrix}
   \xv_{1}^\trans \\ \xv_{2}^\trans \\ \vdots \\ \xv_n^\trans \\ \vdots \\ \xv_{N}^\trans
 \end{pmatrix}
+\quad\quad\quad
 \bv
 =
 \begin{pmatrix}
