@@ -19,15 +19,18 @@ $$
 \newcommand{\gradat}[3]{\nabla_{#1} \left. #2 \right|_{#3}}
 \newcommand{\fracat}[3]{\left. \frac{#1}{#2} \right|_{#3}}
 
-\newcommand{\X}{\bm{X}}
-\newcommand{\Y}{\bm{Y}}
+% Note that bm and boldface do not work.
+\newcommand{\mybold}[1]{\boldsymbol{#1}}
+
+\newcommand{\X}{\mybold{X}}
+\newcommand{\Y}{\mybold{Y}}
 \newcommand{\x}{x}
-\newcommand{\xv}{\bm{x}}
+\newcommand{\xv}{\mybold{x}}
 \newcommand{\z}{z}
 \newcommand{\y}{y}
 \newcommand{\res}{\varepsilon}
-\newcommand{\resv}{\bm{\res}}
-\newcommand{\bv}{\bm{\beta}}
+\newcommand{\resv}{\mybold{\res}}
+\newcommand{\bv}{\mybold{\beta}}
 \newcommand{\bvhat}{\hat{\bv}}
 \newcommand{\bhat}{\hat{\beta}}
 \newcommand{\reshat}{\hat{\res}}

@@ -6,6 +6,9 @@ format:
     code-tools: true
     include-before-body:
      - file: macros.md
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 ---
 
 
@@ -91,6 +94,7 @@ This course will use the following (coarse) taxonomy of tasks:
   - Anything goes, but correpsondingly the results may not be that meaningful
   - Helpful to have a formal understanding of what regression is doing
   - Linear algebra perspective
+
 ## Prediction problems
   - **Bodyfat example**
   - Have some pairs of responses and explanatory variables
@@ -100,6 +104,7 @@ This course will use the following (coarse) taxonomy of tasks:
     meaning
   - Care about uncertainty in and calibration of our prediction
   - Loss minimization perspective
+
 ## Inference problems
   - **Aluminum stress-strain curve example**
   - We have a question about the world that can't be expressed as pure prediction
@@ -122,31 +127,37 @@ Here is a formal definition of the type of model that we will study for the vast
 majority of the semester:
 
 
-```{math}
-:label: lm-scalar
-\begin{align*}
-\y_n ={}& \beta_1 \x_{n1} + \beta_2 \x_{n2} + \ldots + \x_{nP} + \r_{n}, \quad\textrm{For }n=1,\ldots,N.
-\end{align*}
-```
 
-```{tip} Notation
+$$
+%:label: lm-scalar
+\begin{align*}
+\y_n ={}& \beta_1 \x_{n1} + \beta_2 \x_{n2} + \ldots + \x_{nP} + \res_{n}, \quad\textrm{For }n=1,\ldots,N.
+\end{align*}
+$$
+
+::: {.callout-tip title='Notation'}  
 I will always use $N$ for the number of observed data points, and $P$ 
 for the dimension of the regression vector.
-```
+:::
 
 Equation {eq}`lm-scalar` is a general form of simpler cases.  For example,
 if we take $\x_{n1} \equiv 1$, $\x_{n2}= \z_n$ to be some scalar, and $P = 2$, then
 {eq}`lm-scalar` becomes the straight line
-\begin{align*}
-\y_n ={}& \beta_1  + \beta_2 \z_{n} + \r_{n}, \quad\textrm{For }n=1,\ldots,N.
-\end{align*}
 
-The residuals $\r_n$ measure the "misfit" of the line.  If you know $\beta_1, \ldots, \beta_P$,
+$$
+\begin{align*}
+\y_n ={}& \beta_1  + \beta_2 \z_{n} + \res_{n}, \quad\textrm{For }n=1,\ldots,N.
+\end{align*}
+$$
+
+The residuals $\res_n$ measure the "misfit" of the line.  If you know $\beta_1, \ldots, \beta_P$,
 then you can compute
 
+$$
 \begin{align*}
-\r_n ={}& \y_n -  (\beta_1 \x_{n1} + \beta_2 \x_{n2} + \ldots + \x_{nP}).
+\res_n ={}& \y_n -  (\beta_1 \x_{n1} + \beta_2 \x_{n2} + \ldots + \x_{nP}).
 \end{align*}
+$$
 
 But in general we only observe $\y_n$ and $\x_{n1}, \ldots, \x_{nP}$, and we
 choose $\beta_1, \ldots, \beta_P$ to make the residuals small.  (How we do
@@ -155,6 +166,7 @@ this precisely will be something we talk about at great length.)
 The general form of equation {eq}`lm-scalar` can be written more compactly using
 matrix and vector notation. Specifically, if we let
 
+$$
 \begin{align*}
 \xv_n := 
 \begin{pmatrix}
@@ -168,25 +180,29 @@ matrix and vector notation. Specifically, if we let
   \beta_{1} \\ \beta_2 \\ \vdots \\ \beta_{P}
 \end{pmatrix}
 \end{align*}
+$$
 
-```{tip} Notation
+::: {.callout-tip title='Notation'}  
 Bold lowercase variables are column vectors (unless otherwise specified).
-```
+:::
 
-Recall that the "transpose" operator $(\cdot)\trans$ flips the row and
+Recall that the "transpose" operator $(\cdot)^\trans$ flips the row and
 columns of a matrix.  For example,
 
+$$
 \begin{align*}
-\xv_n \trans = 
+\xv_n ^\trans = 
 \begin{pmatrix}
   \x_{n1} & \x_{n2} & \ldots & \x_{nP}
 \end{pmatrix}.
 \end{align*}
+$$
 
 By matrix multiplication rules,
 
+$$
 \begin{align*}
-\xv_n\trans \bv = 
+\xv_n^\trans \bv = 
 \begin{pmatrix}
   \x_{n1} & \x_{n2} & \ldots & \x_{nP}
 \end{pmatrix}
@@ -195,33 +211,40 @@ By matrix multiplication rules,
 \end{pmatrix}
 = \beta_1 \x_{n1} + \beta_2 \x_{n2} + \ldots + \x_{nP}.
 \end{align*}
+$$
 
-```{tip} Notation
-I have written $\xv_n\trans \bv$ for the "dot product" or "inner product"
-between $\xb_n$ and $\bv$.  Writing it in this way clarifies the relationship
+
+::: {.callout-tip title='Notation'}  
+I have written $\xv_n^\trans \bv$ for the "dot product" or "inner product"
+between $\xv_n$ and $\bv$.  Writing it in this way clarifies the relationship
 with matrix notation below.
 
 There are many other ways to denote inner products in the literature,
 including $\xv_n \cdot \bv$ and $<\xv_n, \bv>$.
-```
+:::
 
 Then we can compactly write
 
+$$
 \begin{align*}
-\y_n ={}& \xv_n \trans \bv + \r_{n}, \quad\textrm{For }n=1,\ldots,N.
+\y_n ={}& \xv_n ^\trans \bv + \res_{n}, \quad\textrm{For }n=1,\ldots,N.
 \end{align*}
+$$
 
 We can compactify it even further if we stack the $n$ observations:
 %
+$$
 \begin{align*}
-\y_1 ={}& \xv_1 \trans \bv + \r_{1} \\
-\y_2 ={}& \xv_2 \trans \bv + \r_{2} \\
+\y_1 ={}& \xv_1 ^\trans \bv + \res_{1} \\
+\y_2 ={}& \xv_2 ^\trans \bv + \res_{2} \\
 \vdots\\
-\y_N ={}& \xv_N \trans \bv + \r_{N} \\
+\y_N ={}& \xv_N ^\trans \bv + \res_{N} \\
 \end{align*}
+$$
 
 As before we can stack the responses and residuals:
 
+$$
 \begin{align*}
 \Y := 
 \begin{pmatrix}
@@ -230,15 +253,16 @@ As before we can stack the responses and residuals:
 \quad
 \textrm{and}
 \quad
-\rv := 
+\resv := 
 \begin{pmatrix}
-  \r_{1} \\ \r_2 \\ \vdots \\ \r_{P}
+  \res_{1} \\ \res_2 \\ \vdots \\ \res_{P}
 \end{pmatrix}
 \end{align*}
-
+$$
 
 We can also stack the regressors:
 
+$$
 \begin{align*}
 \X := 
 \begin{pmatrix}
@@ -251,39 +275,44 @@ We can also stack the regressors:
 \end{pmatrix}
 =
 \begin{pmatrix}
-  \xv_{1}\trans \\ \xv_{2}\trans \\ \vdots \\ \xv_n\trans \\ \vdots \\ \xv_{N}\trans
+  \xv_{1}^\trans \\ \xv_{2}^\trans \\ \vdots \\ \xv_n^\trans \\ \vdots \\ \xv_{N}^\trans
 \end{pmatrix}
 \end{align*}
+$$
 
-```{tip} Notation
+
+::: {.callout-tip title='Notation'}  
 I will use upper case bold letters for multi-dimensional matrices like $\X$.  But
 I may also use upper case bold letters even when the quantity could also be
 a column vector, when I think it's more useful to think of the quantity
 as a matrix with a single column.  Examples are $\Y$ above, or $\X$ when $P = 1$.
-```
+:::
 
 Note that by matrix multiplication rules,
 
+$$
 \begin{align*}
 \X  \bv = 
 \begin{pmatrix}
-  \xv_{1}\trans \\ \xv_{2}\trans \\ \vdots \\ \xv_n\trans \\ \vdots \\ \xv_{N}\trans
+  \xv_{1}^\trans \\ \xv_{2}^\trans \\ \vdots \\ \xv_n^\trans \\ \vdots \\ \xv_{N}^\trans
 \end{pmatrix}
 \bv
 =
 \begin{pmatrix}
-  \xv_{1}\trans\bv \\ \xv_{2}\trans\bv \\ \vdots \\ \xv_n\trans\bv \\ \vdots \\ \xv_{N}\trans\bv
+  \xv_{1}^\trans\bv \\ \xv_{2}^\trans\bv \\ \vdots \\ \xv_n^\trans\bv \\ \vdots \\ \xv_{N}^\trans\bv
 \end{pmatrix}
 \end{align*}
+$$
 
 so we end up with the extremely tidy expression
 
+$$
 \begin{align*}
-\y_n ={}& \beta_1 \x_{n1} + \beta_2 \x_{n2} + \ldots + \x_{nP} + \r_{n}, \quad\textrm{For }n=1,\ldots,N
+\y_n ={}& \beta_1 \x_{n1} + \beta_2 \x_{n2} + \ldots + \x_{nP} + \res_{n}, \quad\textrm{For }n=1,\ldots,N
 \\\\&\textrm{is the same as}\quad\\\\
-\Y ={}& \X \bv + \rv.
+\Y ={}& \X \bv + \resv.
 \end{align*}
-
+$$
 
 
 
