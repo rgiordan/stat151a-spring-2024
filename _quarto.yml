@@ -13,13 +13,9 @@ website:
         text: Home / Schedule
       - href: syllabus.qmd
         text: Syllabus
-      - href: calendar.qmd
-        text: Calendar
-      - section: "Units"
+      - section: "Lectures"
         contents:
-          - units/unit1.qmd
-          - units/unit2.ipynb
-          - units/unit3.qmd
+          - lectures/Lecture1.qmd
       - href: data.qmd
         text: Datasets
           
