@@ -1,44 +1,262 @@
-- week: 1
-  days:
-    - date: "Aug 24"
-      items:
-        - type: "Lecture"
-          id: "1"
-          name: Introduction
-          href: "./test.pdf"
-          auxil:
-            id: "Note 1"
-            href: "./unit1.html"
-        - type: "Participation"
-          id: "1"
-          name: Lecture Participation 1
-          href: "https://ds100.org/fa23/lecture/lec01"
-    - date: "Aug 25"
-      items:
-        - type: "Lab"
-          id: "1"
-          name: Prerequisite Coding (due Aug 29)
-          href: "https://ds100.org/fa23/lecture/lec01"
-        - type: "Homework"
-          id: "1A"
-          name: Plotting and Permutation Test (due Aug 31)
-          href: "https://ds100.org/fa23/lecture/lec01"
-        - type: "Homework"
-          id: "1B"
-          name: Prerequisite Math (due Aug 31)
-          href: "https://ds100.org/fa23/lecture/lec01"
-- week: 2
-  days:
-    - date: "Aug 29"
-      items:
-        - type: "Lecture"
-          id: "2"
-          name: Pandas 1
-          href: "https://ds100.org/fa23/lecture/lec01"
-        - type: "Participation"
-          id: "2"
-          name: Lecture Participation 2
-          href: "https://ds100.org/fa23/lecture/lec01"
-          auxil:
-            id: "Note 2"
-            href: "./unit2.html"
+- days:
+  - date: Jan 16
+    items:
+    - href: ./Lectures/Lecture1.md
+      id: 1
+      name: Why study linear models?  Class goals and organization.
+      type: Lecture
+  - date: Jan 17
+    items:
+    - href: ./Labs/Lab1.md
+      id: 1
+      name: R basics.  Loading data, making plots, style best practices
+      type: Lab
+  - date: Jan 18
+    items:
+    - href: ./Lectures/Lecture2.md
+      id: 2
+      name: Simple regression as EDA, prediction, and inference
+      type: Lecture
+  week: 1
+- days:
+  - date: Jan 23
+    items:
+    - href: ./Lectures/Lecture3.md
+      id: 3
+      name: Linear algebra review.  Matrix inverses, square roots, projections
+      type: Lecture
+  - date: Jan 24
+    items:
+    - href: ./Labs/Lab2.md
+      id: 2
+      name: Simulating data.  Matrix square roots.
+      type: Lab
+  - date: Jan 25
+    items:
+    - href: ./Lectures/Lecture4.md
+      id: 4
+      name: Probability review.  Consistency, unbiasedness, CLT
+      type: Lecture
+  week: 2
+- days:
+  - date: Jan 30
+    items:
+    - href: ./Lectures/Lecture5.md
+      id: 5
+      name: 'Multivariate regression as empirical risk minimization.  '
+      type: Lecture
+  - date: Jan 31
+    items:
+    - href: ./Labs/Lab3.md
+      id: 3
+      name: Train and test error as number of regressors increases
+      type: Lab
+  - date: Feb 1
+    items:
+    - href: ./Lectures/Lecture6.md
+      id: 6
+      name: Train / test split and out of sample error
+      type: Lecture
+  week: 3
+- days:
+  - date: Feb 6
+    items:
+    - href: ./Lectures/Lecture7.md
+      id: 7
+      name: Multivariate regression as maximum likelihood estimation
+      type: Lecture
+  - date: Feb 7
+    items:
+    - href: ./Labs/Lab4.md
+      id: 4
+      name: TBD
+      type: Lab
+  - date: Feb 8
+    items:
+    - href: ./Lectures/Lecture8.md
+      id: 8
+      name: Categorical predictors and one-hot encoding
+      type: Lecture
+  week: 4
+- days:
+  - date: Feb 13
+    items:
+    - href: ./Lectures/Lecture9.md
+      id: 9
+      name: Frequentist inference.  Level, power, testing, and confidence intervals
+      type: Lecture
+  - date: Feb 14
+    items:
+    - href: ./Labs/Lab5.md
+      id: 5
+      name: TBD
+      type: Lab
+  - date: Feb 15
+    items:
+    - href: ./Lectures/Lecture10.md
+      id: 10
+      name: Grouping data in the bootstrap
+      type: Lecture
+  week: 5
+- days:
+  - date: Feb 20
+    items:
+    - href: ./Lectures/Lecture11.md
+      id: 11
+      name: Asymptotics of empirical risk minimization.  Sandwich covariance
+      type: Lecture
+  - date: Feb 21
+    items:
+    - href: ./Labs/Lab6.md
+      id: 6
+      name: TBD
+      type: Lab
+  - date: Feb 22
+    items:
+    - href: ./Lectures/Lecture12.md
+      id: 12
+      name: Calibration and conformal inference for prediction
+      type: Lecture
+  week: 6
+- days:
+  - date: Feb 27
+    items:
+    - href: ./Lectures/Lecture13.md
+      id: 13
+      name: 'How regression fails: Omitted variables, endogeneity'
+      type: Lecture
+  - date: Feb 28
+    items:
+    - href: ./Labs/Lab7.md
+      id: 7
+      name: TBD
+      type: Lab
+  - date: Feb 29
+    items:
+    - href: ./Lectures/Lecture14.md
+      id: 14
+      name: "How regression fails: Domain changes, Simpson\u2019s paradox, outliers"
+      type: Lecture
+  week: 7
+- days:
+  - date: Mar 5
+    items:
+    - href: ./Lectures/Lecture15.md
+      id: 15
+      name: 'How regression fails: Non-independence, small sample sizes'
+      type: Lecture
+  - date: Mar 6
+    items:
+    - href: ./Labs/Lab8.md
+      id: 8
+      name: Review
+      type: Lab
+  - date: Mar 7
+    items:
+    - href: ./Lectures/Lecture16.md
+      id: 16
+      name: Midterm review
+      type: Lecture
+  week: 8
+- days:
+  - date: Mar 12
+    items:
+    - href: ./Lectures/Lecture17.md
+      id: 17
+      name: Binary regression for prediction
+      type: Lecture
+  - date: Mar 13
+    items:
+    - href: ./Labs/Lab9.md
+      id: 9
+      name: rstanarm
+      type: Lab
+  - date: Mar 14
+    items:
+    - href: ./Lectures/Lecture18.md
+      id: 18
+      name: Binary regression for inference
+      type: Lecture
+  week: 9
+- days:
+  - date: Mar 19
+    items:
+    - href: ./Lectures/Lecture19.md
+      id: 19
+      name: 'Bayesian inference: multivariate normal'
+      type: Lecture
+  - date: Mar 20
+    items:
+    - href: ./Labs/Lab10.md
+      id: 10
+      name: Inference failure for variable selection
+      type: Lab
+  - date: Mar 21
+    items:
+    - href: ./Lectures/Lecture20.md
+      id: 20
+      name: 'Bayesian inference: regression and shrinkage'
+      type: Lecture
+  week: 10
+- days: []
+  week: 11
+- days:
+  - date: Apr 2
+    items:
+    - href: ./Lectures/Lecture21.md
+      id: 21
+      name: 'Variable selection: collinearity and shrinkage'
+      type: Lecture
+  - date: Apr 3
+    items:
+    - href: ./Labs/Lab11.md
+      id: 11
+      name: Double descent
+      type: Lab
+  - date: Apr 4
+    items:
+    - href: ./Lectures/Lecture22.md
+      id: 22
+      name: 'Variable selection: LASSO and post-selection inference'
+      type: Lecture
+  week: 12
+- days:
+  - date: Apr 9
+    items:
+    - href: ./Lectures/Lecture23.md
+      id: 23
+      name: 'Basis expansions: Bias and variance'
+      type: Lecture
+  - date: Apr 10
+    items:
+    - href: ./Labs/Lab12.md
+      id: 12
+      name: Project practice
+      type: Lab
+  - date: Apr 11
+    items:
+    - href: ./Lectures/Lecture24.md
+      id: 24
+      name: 'Basis expansions: Interpolation and double descent'
+      type: Lecture
+  week: 13
+- days:
+  - date: Apr 16
+    items:
+    - href: ./Lectures/Lecture25.md
+      id: 25
+      name: Influence functions (?)
+      type: Lecture
+  - date: Apr 17
+    items:
+    - href: ./Labs/Lab13.md
+      id: 13
+      name: TBD
+      type: Lab
+  - date: Apr 18
+    items:
+    - href: ./Lectures/Lecture26.md
+      id: 26
+      name: Permutation testing (?)
+      type: Lecture
+  week: 14

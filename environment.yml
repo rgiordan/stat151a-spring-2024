@@ -1,0 +1,13 @@
+name: stat-quarto-site
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python==3.11.*
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - jupyter
+  - jupyterlab
